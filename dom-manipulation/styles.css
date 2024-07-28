@@ -1,0 +1,20 @@
+button {
+  background-color: aqua;
+  color: red;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  border-spacing: 20px;
+
+}
+body {
+  padding: 20px;
+  margin: 20px;
+  width: 10%;
+  height: 20%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  font-weight: bold;
+}
