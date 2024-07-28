@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded',function(){
       "Believe you can and you're halfway there. - Encouragment"
   ];
 
-  function displayRandomQuote() {
+  function showRandomQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const randomQuote = quotes[randomIndex];
 
