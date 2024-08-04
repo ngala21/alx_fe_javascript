@@ -2,6 +2,12 @@
 ** A Totally Real Project by a total "Software Engineer" 
 ** @author: Ngala21
 */
+
+// Project => Dynamic Quote Generator
+
+// Project Focus => DOM Manipulation, Web Storage and working with JSON data
+
+// Manage an array  of quote objects where each quote has a text and a category
 const quotes = [
   {
     text: "Find a group of people who challenge and inspire you; spend a lot of time with them, and it will change your life.",
@@ -25,13 +31,13 @@ const quotes = [
   }
 ];
 
+// Display new quote
 function addQuoteToDOM(quote) {
   const quoteDisplay = document.getElementById('quoteDisplay');
   quoteDisplay.textContent = quote.text;
 }
 
 document.addEventListener('DOMContentLoaded', ()=> {
-
   // Display random quote   
   function showRandomQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -40,7 +46,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     quoteDisplay.textContent = randomQuote.text;
   }
 
-// Add Quote
+// Add New Quote
 function addedQuote() {
   const createAddQuoteForm = document.createElement ('form');
   createAddQuoteForm.setAttribute("id", "createQuoteForm");
@@ -72,19 +78,20 @@ function addedQuote() {
   createAddQuoteForm.appendChild(submitButton);
   // const exportQuotesButton = document.getElementById('exportQuotesButton');
   
-  // function exportQuotes(){
-  // const json= JSON.stringify(quotes,null, 2);
-  // const blob = newBlob([json],{ type: 'application/json'});
-  // const url = URL.createObjectURL(blob);
-  // const a = document.createElement('a');
-  // a.href = url;
-  // a.download = 'quotes.json';
-  // a.click();
-  // console.log(url);
-  // };
+  function exportQuotes(){
+  const json= JSON.stringify(quotes,null, 2);
+  const blob = newBlob([json],{ type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'quotes.json';
+  a.click();
+  console.log(url);
+  };
     
   document.body.appendChild(createAddQuoteForm);
 }
+
 
 function importFromJsonFile(event) {
     const fileReader = new FileReader();
